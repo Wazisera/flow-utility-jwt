@@ -9,40 +9,40 @@ use Neos\Cache\Frontend\FrontendInterface;
  */
 class KeyProvider {
 
-	/**
-	 * @var string
-	 * @Flow\InjectConfiguration(path="keyUrl")
-	 */
-	protected $keyUrl;
+    /**
+     * @var string
+     * @Flow\InjectConfiguration(path="keyUrl")
+     */
+    protected $keyUrl;
 
-	/**
-	 * @var string
-	 * @Flow\InjectConfiguration(path="key")
-	 */
-	protected $key;
+    /**
+     * @var string
+     * @Flow\InjectConfiguration(path="key")
+     */
+    protected $key;
 
-	/**
-	 * @var FrontendInterface
-	 * @Flow\Inject
-	 */
-	protected $cache;
+    /**
+     * @var FrontendInterface
+     * @Flow\Inject
+     */
+    protected $cache;
 
-	/**
-	 * @return string
-	 */
-	public function getPublicKey() {
-		if ($this->key) {
-			return $this->key;
-		}
+    /**
+     * @return string
+     */
+    public function getPublicKey() {
+        if ($this->key) {
+            return $this->key;
+        }
 
-		$cacheKey = sha1($this->keyUrl);
-		if ($this->cache->has($cacheKey)) {
-			return $this->cache->get($cacheKey);
-		}
+        $cacheKey = sha1($this->keyUrl);
+        if ($this->cache->has($cacheKey)) {
+            return $this->cache->get($cacheKey);
+        }
 
-		$key = file_get_contents($this->keyUrl);
-		$this->cache->set($cacheKey, $key);
+        $key = file_get_contents($this->keyUrl);
+        $this->cache->set($cacheKey, $key);
 
-		return $key;
-	}
+        return $key;
+    }
 }
