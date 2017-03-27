@@ -1,0 +1,25 @@
+Neos:
+  Flow:
+    security:
+      authentication:
+        providers:
+          JwtAuthenticationProvider:
+            provider: Wazisera\Utility\JsonWebToken\Authentication\JwtAuthenticationProvider
+
+Wazisera:
+  Utility:
+    JsonWebToken:
+      key: 'fnbyyDPEVNlJbs19NXC8v6g+pQay5rH/I6N2iB'
+      keyUrl: https://identity.service.consul/key
+      algorithms:
+        - HS256
+      tokenSources:
+        - from: header
+          name: X-Jwt
+        - from: cookie
+          name: JWT
+        - from: query
+          name: token
+      claimMapping:
+        roleField: ~
+        roles: {}

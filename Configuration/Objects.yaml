@@ -1,0 +1,9 @@
+Wazisera\Utility\JsonWebToken\KeyProvider:
+  properties:
+    cache:
+      object:
+        factoryObjectName: Neos\Flow\Cache\CacheManager
+        factoryMethodName: getCache
+        arguments:
+          1:
+            value: Wazisera_Utility_JsonWebToken_KeyCache
