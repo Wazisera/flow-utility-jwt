@@ -1,6 +1,11 @@
 <?php
 namespace Wazisera\Utility\JsonWebToken\Authentication;
 
+/*                                                                        *
+ * This script belongs to the package "Wazisera.Utility.JsonWebToken".    *
+ *                                                                        *
+ *                                                                        */
+
 use Firebase\JWT\ExpiredException;
 use Firebase\JWT\JWT;
 use Wazisera\Utility\JsonWebToken\Authentication\Token\JsonWebToken;

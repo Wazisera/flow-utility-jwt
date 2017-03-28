@@ -1,6 +1,11 @@
 <?php
 namespace Wazisera\Utility\JsonWebToken;
 
+/*                                                                        *
+ * This script belongs to the package "Wazisera.Utility.JsonWebToken".    *
+ *                                                                        *
+ *                                                                        */
+
 use Neos\Flow\Annotations as Flow;
 use Neos\Cache\Frontend\FrontendInterface;
 

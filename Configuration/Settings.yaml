@@ -9,7 +9,7 @@ Neos:
 Wazisera:
   Utility:
     JsonWebToken:
-      key: 'fnbyyDPEVNlJbs19NXC8v6g+pQay5rH/I6N2iB'
+      key: ~
       keyUrl: https://identity.service.consul/key
       algorithms:
         - HS256

@@ -1,6 +1,11 @@
 <?php
 namespace Wazisera\Utility\JsonWebToken\Authentication\Token;
 
+/*                                                                        *
+ * This script belongs to the package "Wazisera.Utility.JsonWebToken".    *
+ *                                                                        *
+ *                                                                        */
+
 use Neos\Flow\Mvc\ActionRequest;
 use Neos\Flow\Security\Authentication\Token\AbstractToken;
 use Neos\Flow\Security\Authentication\Token\SessionlessTokenInterface;

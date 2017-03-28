@@ -1,7 +1,11 @@
 {
-    "name": "wazisera/utility/json-web-token",
+    "name": "wazisera/flow-utility-jwt",
     "description": "",
     "type": "neos-package",
+    "keywords": ["jsonwebtoken", "jwt", "authentication", "flow", "neos"],
+    "homepage": "https://github.com/wazisera/flow-utility-jwt",
+    "license": "MIT",
+    "version": "1.0",
     "require": {
         "neos/flow": "~4.0",
         "firebase/php-jwt": "~4.0"
