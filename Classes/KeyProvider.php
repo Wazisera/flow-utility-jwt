@@ -45,7 +45,7 @@ class KeyProvider {
             return $this->cache->get($cacheKey);
         }
 
-        $key = file_get_contents($this->keyUrl);
+        $key = @file_get_contents($this->keyUrl);
         $this->cache->set($cacheKey, $key);
 
         return $key;
