@@ -42,7 +42,7 @@ class JsonWebToken extends AbstractToken implements SessionlessTokenInterface {
                 }
             } elseif ($tokenSource['from'] == 'cookie') {
                 if ($httpRequest->hasCookie($name)) {
-                    $token = $httpRequest->getCookie($name);
+                    $token = $httpRequest->getCookie($name)->getValue();
                     break;
                 }
             } elseif ($tokenSource['from'] == 'query') {
@@ -56,11 +56,11 @@ class JsonWebToken extends AbstractToken implements SessionlessTokenInterface {
         if (NULL !== $token) {
             $this->credentials['encoded'] = $token;
             $this->setAuthenticationStatus(self::AUTHENTICATION_NEEDED);
-            return TRUE;
+            return true;
         }
 
         $this->setAuthenticationStatus(self::NO_CREDENTIALS_GIVEN);
-        return FALSE;
+        return false;
     }
 
     /**

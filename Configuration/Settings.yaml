@@ -9,7 +9,7 @@ Neos:
 Wazisera:
   Utility:
     JsonWebToken:
-      key: ~
+#      key: ~
       keyUrl: https://identity.service.consul/key
       algorithms:
         - HS256
@@ -20,6 +20,6 @@ Wazisera:
           name: JWT
         - from: query
           name: token
-      claimMapping:
-        roleField: ~
-        roles: {}
+#      claimMapping:
+#        roleField: ~
+#        roles: {}
