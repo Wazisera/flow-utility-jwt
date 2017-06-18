@@ -8,6 +8,8 @@ namespace Wazisera\Utility\JsonWebToken;
 
 use Firebase\JWT\JWT;
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Mvc\ActionRequest;
+use Wazisera\Utility\JsonWebToken\Authentication\Token\JsonWebToken;
 
 /**
  * @Flow\Scope("singleton")
@@ -46,6 +48,23 @@ class JwtService {
      */
     public function decodeJsonWebToken($encodedJWT) {
         return JWT::decode($encodedJWT, $this->keyProvider->getPublicKey(), $this->algorithms);
+    }
+
+    /**
+     * @param ActionRequest $request
+     * @return object|null
+     */
+    public function decodeJsonWebTokenFromRequest(ActionRequest $request) {
+        $claims = null;
+        $jwtToken = new JsonWebToken();
+        $result = $jwtToken->updateCredentials($request);
+        if($result === true) {
+            $encodedJWT = $jwtToken->getEncodedJwt();
+            if(is_string($encodedJWT) && count(explode('.', $encodedJWT)) === 3) {
+                $claims = $this->decodeJsonWebToken($encodedJWT);
+            }
+        }
+        return $claims;
     }
 
     /**
