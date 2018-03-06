@@ -5,9 +5,9 @@
     "keywords": ["jsonwebtoken", "jwt", "authentication", "flow", "neos"],
     "homepage": "https://github.com/wazisera/flow-utility-jwt",
     "license": "MIT",
-    "version": "1.0",
+    "version": "1.0.1",
     "require": {
-        "neos/flow": "~4.0",
+        "neos/flow": "~4.3",
         "firebase/php-jwt": "~4.0"
     },
     "autoload": {
